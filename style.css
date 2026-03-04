@@ -6,7 +6,7 @@
 }
 
 body {
-    background: #0f0f0f;
+    background: linear-gradient(135deg, #000000, #1a0000);
     color: white;
     scroll-behavior: smooth;
 }
@@ -43,10 +43,18 @@ header {
     display: inline-block;
     margin-top: 20px;
     padding: 12px 25px;
-    background: #00ffcc;
-    color: black;
+    background: #ff0000;
+    color: white;
     border-radius: 6px;
     text-decoration: none;
+    transition: 0.3s ease;
+    box-shadow: 0 0 10px #ff0000;
+}
+
+.btn:hover {
+    background: black;
+    color: #ff0000;
+    box-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000;
 }
 
 section {
@@ -73,6 +81,7 @@ section {
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     animation: float 3s ease-in-out infinite;
     cursor: pointer;
+    box-shadow: 0 0 15px #ff0000;
 }
 
 /* Floating animation */
@@ -101,12 +110,18 @@ section {
 }
 
 .project-card {
-    background: #1e1e1e;
+    background: #111;
     margin: 20px auto;
     padding: 20px;
     width: 80%;
     border-radius: 10px;
     transition: 0.3s;
+    border: 1px solid #ff0000;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #ff0000;
 }
 
 .project-card:hover {
@@ -135,4 +150,14 @@ section {
         flex-direction: column;
         margin-top: 10px;
     }
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at var(--x) var(--y), rgba(255,0,0,0.15), transparent 20%);
+    pointer-events: none;
 }
